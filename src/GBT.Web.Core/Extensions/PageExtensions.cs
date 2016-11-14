@@ -1,5 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection;
 using GBT.Web.Core.Bases;
+using GBT.Web.Core.Model.PageItems;
+using GBT.Web.Core.TypeAnnotation;
+using Microsoft.AspNetCore.Routing;
 
 namespace GBT.Web.Core.Extensions
 {
@@ -43,6 +49,25 @@ namespace GBT.Web.Core.Extensions
         public static bool IsActive(this Page page, long activeId)
         {
             return activeId == page.Id || page.ChildPages.Any(childPage => childPage.IsActive(activeId));
+        }
+
+        public static string NavigationLink(this Page page)
+        {
+            if (page is NavigationPage)
+            {
+                return ((NavigationPage)page).NavigateToPage.NavigationLink();
+            }
+            if (page is LinkedPage)
+            {
+                return ((LinkedPage) page).Link;
+            }
+            var attr = page.GetType().GetTypeInfo().GetCustomAttribute<NavigationAttribute>();
+            if (attr == null)
+            {
+                throw new MissingFieldException($"Navigation details are missing for the type {page.GetType().Name}");
+            }
+            //return Url.Action(attr.Action, attr.Controller, new {id = page.Id});
+            return null; // ToDo: must figure out how to do this
         }
     }
 }

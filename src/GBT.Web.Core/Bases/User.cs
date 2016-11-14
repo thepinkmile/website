@@ -1,4 +1,5 @@
 ﻿using System;
+using GBT.Web.Core.DataAnnotations;
 using GBT.Web.Core.Model.LibraryItems;
 
 namespace GBT.Web.Core.Bases
@@ -15,6 +16,7 @@ namespace GBT.Web.Core.Bases
 
         public DateTime? DateOfBirth { get; set; }
 
+        [ImageSizeConstraint(MinWidth = 160, MaxWidth = 160)]
         public Image Avatar { get; set; }
         public long AvatarId { get; set; }
     }

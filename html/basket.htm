@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-Equiv="Cache-Control" Content="no-cache" />
+		<meta http-Equiv="Pragma" Content="no-cache" />
+		<meta http-Equiv="Expires" Content="0" />
+		<title>The Pink Mile</title>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" /> 
+		<link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
+		<link rel="stylesheet" type="text/css" href="styles/site.min.css" />
+	</head>
+	<body>
+		<noscript><div class="noscript">You need JavaScript enabled to correct display page</div></noscript>
+		<div class="page-box">
+			<div class="page">
+				<div class="header">
+					<img class="header-img1" src="images/serenity.jpg" />
+					<a href="default.htm"><img class="logo" src="images/logo.jpg" /></a>
+					<img class="header-img1" src="images/trinity.jpg" />
+				</div>
+				<div class="control-panel ui-widget ui-state-default ui-corner-all">
+					<div class="breadcrumb">
+						Location:
+						<ul>
+							<li><a href="default.htm">Home</a></li>
+							<li><a href="shop.htm">Shop</a></li>
+							<li>Basket</li>
+						</ul>
+					</div>
+					<div class="search-box">
+						<form name="frmSearch" id="frmSearch" method="get" action="search.htm">
+							<fieldset>
+								<label for="search">Search:</label>
+								<input type="hidden" value="0001" name="groupInView">
+								<input type="text" name="search" id="search" placeholder="type here..." value="">
+								<button type="submit" id="submit" name="submit">Search</button>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div class="content-box">
+					<div class="menu-panel">
+						<ul>
+							<li><a href="default.htm">Home</a></li>
+							<li><a href="page.htm">About Us</a></li>
+							<li><a href="page.htm">Info</a></li>
+							<li><a href="affiliate.htm">Support</a></li>
+							<li><a href="news.htm">News</a></li>
+							<li><a href="news.htm">Events</a></li>
+							<li class="active"><a href="shop.htm">Shop</a>
+								<ul>
+									<li class="active">My Basket (5)</li>
+								</ul>
+							</li>
+							<li><a href="contact.htm">Contact Us</a></li>
+							<li><a href="sitemap.htm">Sitemap</a></li>
+						</ul>
+					</div>
+					<div class="content">
+						<h1>My Basket</h1>
+						<div class="description ui-widget-content ui-corner-all">
+							<p>Please check to ensure the correct quantity for each item. To remove items set quantity to '0' then click 'update basket' to confirm your changes.</p>
+						</div>
+						<form action="checkout.htm" method="get">
+							<table class="basket display row-border">
+								<thead>
+									<tr>
+										<th>Description</th>
+										<th>Quantity</th>
+										<th>Unit Price</th>
+										<th>Line Total</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="itm-1">
+										<td>
+											<div class="photos">
+												<ul>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate1.png" /></a></li>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate2.png" /></a></li>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate3.png" /></a></li>
+												</ul>
+											</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet...</p>
+										</td>
+										<td><input class="spinner" id="itm-1-qty" name="itm-1-qty" value="1" data-item="itm-1" /></td>
+										<td class="itm-price price">3.99</td>
+										<td class="total price">3.99</td>
+									</tr>
+									<tr class="itm-2">
+										<td>
+											<div class="photos">
+												<ul>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate1.png" /></a></li>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate2.png" /></a></li>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate3.png" /></a></li>
+												</ul>
+											</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet...</p>
+										</td>
+										<td><input class="spinner" id="itm-2-qty" name="itm-2-qty" value="2" data-item="itm-3" /></td>
+										<td class="itm-price price">1.99</td>
+										<td class="total price">3.98</td>
+									</tr>
+									<tr class="itm-3">
+										<td>
+											<div class="photos">
+												<ul>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/no-image.png" /></a></li>
+												</ul>
+											</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet...</p>
+										</td>
+										<td><input class="spinner" id="itm-3-qty" name="itm-3-qty" value="10" data-item="itm-3" /></td>
+										<td class="itm-price price">0.10</td>
+										<td class="total price">1.00</td>
+									</tr>
+									<tr class="itm-4">
+										<td>
+											<div class="photos">
+												<ul>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate1.png" /></a></li>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate2.png" /></a></li>
+													<li><a href="shopitem.htm"><img width="100" height="100" src="images/rotate3.png" /></a></li>
+												</ul>
+											</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet...</p>
+										</td>
+										<td><input class="spinner" id="itm-4-qty" name="itm-4-qty" value="1" data-item="itm-4" /></td>
+										<td class="itm-price price">30.00</td>
+										<td class="total price">30.00</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th colspan="3">Sub-Total</th>
+										<th class="subtotal price">38.97</th>
+									</tr>
+									<tr>
+										<th colspan="3">Postage &amp; Packaging</th>
+										<th class="postage price">12.00</th>
+									</tr>
+									<tr>
+										<th colspan="3">Total</th>
+										<th class="packaging price">50.97</th>
+									</tr>
+								</tfoot>
+							</table>
+							<div class="basket-button-panel">
+								<a href="shop.htm"><img src="images/back-to-shop.png" alt="Back to Shop" /></a>
+								<input type="submit" name="submit" id="submit" value="Checkout" />
+								<input type="submit" name="update" id="update" value="Update" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="footer ui-widget ui-state-default ui-corner-all">
+					<ul>
+						<li class="facebook"><a href="http://www.facebook.com/thepinkmile">The Pink Mile</a></li>
+						<li class="twitter"><a href="https://twitter.com/thepinkmile11">@ThePinkMile11</a></li>
+						<li class="email"><a href="mailto:info@thepinkmile.com">info@thepinkmile.org.uk</a></li>
+						<li class="skype"><a href="skype:thepinkmile11?chat">ThePinkMile11</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="scripts/site.min.js"></script>
+	</body>
+</html>

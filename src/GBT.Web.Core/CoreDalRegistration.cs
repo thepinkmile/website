@@ -26,10 +26,15 @@ namespace GBT.Web.Core
             {
                 e.ToTable("Pages");
                 e.HasKey(p => p.Id);
+                e.Property(p => p.Title).IsRequired();
+                e.Property(p => p.Description).HasDefaultValue(null);
+                e.Property(p => p.Marquee).HasDefaultValue(null);
+                e.Property(p => p.Ordinal).HasDefaultValue(0);
                 e.HasOne(p => p.ParentPage).WithMany(pp => pp.ChildPages).OnDelete(DeleteBehavior.Restrict);
                 e.HasMany(p => p.Documents).WithOne(r => r.Parent).OnDelete(DeleteBehavior.Cascade);
                 e.HasMany(p => p.Polls).WithOne(q => q.Page).OnDelete(DeleteBehavior.Cascade);
                 e.HasDiscriminator<string>("Type")
+                    .HasValue<NavigationRoot>(nameof(NavigationRoot))
                     .HasValue<StandardPage>(nameof(StandardPage))
                     .HasValue<NewsSection>(nameof(NewsSection))
                     .HasValue<EventsSection>(nameof(EventsSection))
@@ -59,6 +64,8 @@ namespace GBT.Web.Core
             {
                 e.ToTable("ContentItems");
                 e.HasKey(c => c.Id);
+                e.Property(c => c.Title).IsRequired();
+                e.Property(c => c.Description).HasDefaultValue(null);
                 e.HasMany(c => c.Documents).WithOne(r => r.Parent);
                 e.HasDiscriminator<string>("Type")
                     .HasValue<NewsItem>(nameof(NewsItem))

@@ -43,6 +43,8 @@ namespace GBT.Web.Core.Bases
         
         public ICollection<Page> ChildPages { get; set; }
 
+        public int Ordinal { get; set; }
+
         #endregion
     }
 }

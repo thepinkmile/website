@@ -8,6 +8,15 @@
         Twitter,
         LinkdeIn,
         Instagram,
-        Phone
+        Phone,
+        Blogger,
+        Flicker,
+        GooglePlus,
+        Pintrest,
+        RSS,
+        Skype,
+        Vimeo,
+        WordPress,
+        YouTube
     }
 }

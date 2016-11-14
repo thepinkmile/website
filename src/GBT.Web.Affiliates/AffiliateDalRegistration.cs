@@ -18,6 +18,10 @@ namespace GBT.Web.Affiliates
             {
                 e.ToTable("Users");
                 e.HasKey(u => u.Id);
+                e.Property(u => u.Organisation).IsRequired();
+                e.Property(u => u.Description).HasDefaultValue(null);
+                e.Property(u => u.Marquee).HasDefaultValue(null);
+                e.HasMany(u => u.ContactDetails).WithOne(d => d.Affiliate).OnDelete(DeleteBehavior.Cascade);
                 e.HasOne(u => u.Avatar).WithOne().OnDelete(DeleteBehavior.Cascade);
                 e.HasDiscriminator<string>("Type")
                     .HasValue<Affiliate>(nameof(Affiliate));
@@ -27,15 +31,15 @@ namespace GBT.Web.Affiliates
             {
                 e.ToTable("AffiliateContactDetails");
                 e.HasKey(d => d.Id);
-                e.HasOne(d => d.Affiliate).WithMany(a => a.ContactDetails);
+                e.HasOne(d => d.Affiliate).WithMany(a => a.ContactDetails).OnDelete(DeleteBehavior.Restrict);
                 e.HasIndex(d => new { d.AffiliateId, d.DetailType }).IsUnique();
             });
 
-            modelBuilder.Entity<Page>(e =>
+            modelBuilder.Entity<AffilliatePage>(e =>
             {
                 e.ToTable("Pages");
                 e.HasKey(p => p.Id);
-                e.HasMany(p => p.Documents).WithOne(r => r.Parent);
+                e.HasOne(p => p.Affiliate).WithMany(a => a.Pages).IsRequired().OnDelete(DeleteBehavior.Restrict);
                 e.HasDiscriminator<string>("Type")
                     .HasValue<AffilliatePage>(nameof(AffilliatePage));
             });
